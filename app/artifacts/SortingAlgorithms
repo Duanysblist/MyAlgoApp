@@ -1,0 +1,53 @@
+fun main() {
+
+    /**
+     * Selection Sort
+     **/
+    var arr1 = arrayOf(64, 25, 12, 22, 11)
+    // Find the smallest value
+    for (i in arr1.indices){
+        // Current Position is i
+        var min_val = arr1[i]
+        var min_pos = i
+        for(j in i..arr1.lastIndex){
+            if (arr1[j] < min_val){
+                min_val = arr1[j]
+                min_pos = j
+            }
+        }
+        // Swap this value and the current position value
+        var temp = arr1[i]
+        arr1[i] = min_val
+        arr1[min_pos] = temp
+    }
+
+    for(element in arr1){
+        println(element)
+    }
+
+    /**
+     * Insertion Sort
+     * **/
+
+    var arr2 = arrayOf(12, 11, 13, 5, 6)
+    // Set up two positions
+    var pos1 = 0
+    var pos2 = 1
+
+    for (i in 1..arr2.lastIndex){
+        var key = arr2[i]
+        var j = i - 1
+
+        while(j >= 0 && arr2[j] > key){
+            arr2[j + 1] = arr2[j]
+            j -= 1
+        }
+        arr2[j + 1] = key
+    }
+
+    for(element in arr2) {
+        println(element)
+    }
+
+
+}
